@@ -10,6 +10,11 @@ wl-clip-persist --clipboard regular --reconnect-tries 0 &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
-# 4. Write a clean timestamp confirmation to your local diagnostic log
+# 4. Fire up the OLED idle display power manager script
+# (This spawns your swayidle configurations in the background)
+/home/faceyneck/scripts/idle.sh &
+
+
+# 5. Write a clean timestamp confirmation to your local diagnostic log
 echo "Clipboard started successfully at $(date)" > "$HOME/scripts/mango-autostart.log"
 

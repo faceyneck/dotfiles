@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Start swayidle to handle locking and screen power-off after 5 minutes (300s)
-swayidle -w \
-    timeout 1300 'gtklock' \
-    timeout 1300 'wlopm --off \*' \
-    resume 'wlopm --on \*' \
-    before-sleep 'gtklock'
+# Fire up swayidle using your clean inherited environment variables
+exec swayidle -w \
+    timeout 900 "mmsg dispatch 'sleep_monitor,model:AW3425DW'" \
+    timeout 905 "wlopm --off \*" \
+    resume "wlopm --on \*; mmsg dispatch 'wakeup_monitor,model:AW3425DW'" \
+    before-sleep "mmsg dispatch 'sleep_monitor,model:AW3425DW'; wlopm --off \*"
 
