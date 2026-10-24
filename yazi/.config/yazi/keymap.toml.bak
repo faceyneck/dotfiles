@@ -1,0 +1,5 @@
+[mgr]
+
+    prepend_keymap = [
+        { on = "<C-w>", run = 'shell -- awww img "%h"', desc = "Set hovered file as wallpaper" },
+    ]

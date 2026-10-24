@@ -1,2 +1,10 @@
 [flavor]
-dark = "flexoki-dark"
+dark = "tokyo-night"
+
+
+[tasks]
+border   = { fg = "blue" }
+title    = { fg = "blue", bold = true }
+value    = { fg = "yellow", bold = true }  # Colors the text percentage clearly
+progress = { fg = "blue", bg = "#2d2a2e" } # High-contrast background track
+
