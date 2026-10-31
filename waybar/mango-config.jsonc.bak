@@ -117,6 +117,7 @@
       "format-wifi": "  {essid}",
       "format-ethernet": " 󰈀 {bandwidthDownBits}",
       "interval": 5,
+      "min-length": 50,
       "tooltip-format": "{ifname} via {gwaddr}",
       "format-linked": "{ifname} (No IP) ",
       "format-disconnected": "Disconnected ⚠",

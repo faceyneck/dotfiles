@@ -120,8 +120,8 @@
 
 
   "network": {
-      "format-wifi": "  {essid}",
-      "format-ethernet": " 󰈀  {bandwidthDownBits}",
+      "format-wifi": " {essid}{bandwidthDownBits:>12}",
+      "format-ethernet": " 󰈀  {bandwidthDownBits:>12}",
       "interval": 5,
       "tooltip-format": "{ifname} via {gwaddr}",
       "format-linked": "{ifname} (No IP) ",
