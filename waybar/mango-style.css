@@ -2,7 +2,7 @@
    UNIVERSAL MANGO/WAYBAR WORKSPACE ENGINE OVERRIDES
    ========================================================================= */
 * {
-    font-family: "FiraMono Nerd Font", sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "FiraMono Nerd Font", sans-serif;
     font-size: 12px;
     background: transparent;
 }
