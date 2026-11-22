@@ -116,8 +116,8 @@ window#waybar menu item:hover {
 #temperature,
 #backlight,
 #battery,
-#tray,
-#mpd {
+#tray {
+
     margin: 4px 3px;       /* Dropped to 3px to bring modules tight and clean */
     padding: 0px 4px 0px 4px;      /* Standard internal buffer */
 }
@@ -201,11 +201,5 @@ window#waybar menu item:hover {
     background-color: #1a1b26;
     border: 1px solid #444b6a;
     border-radius: 0px;
-}
-
-#mpd {
-    background-color: rgba(158, 206, 106, 0.1);
-    border-radius: 0px;
-    color: #9ece6a;
 }
 
