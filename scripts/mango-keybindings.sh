@@ -1,15 +1,23 @@
-cat << 'EOF' > /home/faceyneck/github/dotfiles/scripts/mango-keybindings.sh
-#!/usr/bin/env bash
-set -euo pipefail
+sed -n '/^[[:space:]]*#BEGIN_KB/,/^[[:space:]]*#END_KB/p' ~/.config/mango/config.conf |
+  grep -E '^[[:space:]]*bind[[:space:]]*=' |
+  awk '
+    {
+      desc = $0
+      sub(/^.*##[[:space:]]*/, "", desc)
 
-yad --list \
-  --title="MangoWM Keybindings" \
-  --width=640 \
-  --height=260 \
-  --column="Keybinding" \
-  --column="Description" \
-  --search-column=2 \
-  --button="Close:0" \
-  "SUPER + Return" "Spawn foot terminal emulator"
-EOF
-chmod +x /home/faceyneck/github/dotfiles/scripts/mango-keybindings.sh
+      line = $0
+      sub(/[[:space:]]*##.*$/, "", line)
+      sub(/^[[:space:]]*bind[[:space:]]*=[[:space:]]*/, "", line)
+
+      split(line, parts, ",")
+      print parts[1] " + " parts[2]
+      print desc
+    }
+  ' | yad --list \
+    --title="MangoWM Keybindings" \
+    --width=700 \
+    --height=320 \
+    --column="Keybinding" \
+    --column="Description" \
+    --search-column=2 \
+    --button="Close:0"
