@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR="/github/mango"
+REPO_DIR="$HOME/github/mango"
 BUILD_DIR="$REPO_DIR/build"
 BRANCH="wl-only"
 
